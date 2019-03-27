@@ -1,0 +1,26 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+form {
+    width: 600px;
+    margin: 20px auto;
+}
+fieldset {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin: 10px 0;
+    border: none; /* 消除原始输入边框的内容 */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    padding-left: 4px;
+    box-sizing: border-box; /* width=内容+padding+border */
+}

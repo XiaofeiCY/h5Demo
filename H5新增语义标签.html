@@ -1,0 +1,86 @@
+<!-- 直接打html:5 再按tap键快速生成  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        header {
+            width: 100%;
+            height: 100px;
+            background-color: yellowgreen;
+        }
+        nav {
+            width: 100%;
+            height: 36px;
+            background-color: violet;
+        }
+        /* IE9及以上版本虽说支持部分H5标签，但是这里他把这些标签当成了行内元素
+        行内元素在设置宽高的时候是失效的(只有到IE10以后才全部支持) */
+        main {
+            width: 100%;
+            height: calc(100% - 236px);
+            background-color: aqua;
+        }
+        main > article {
+            width: 80%;
+            height: calc(100% - 20px);
+            background-color: blueviolet;
+            float: left;
+        }
+        main > aside {
+            width: 20%;
+            height: calc(100% - 20px);
+            background-color: brown;
+            float: left;
+        }
+        main > span {
+            width: 100%;
+            overflow: auto;
+            display: block;
+        }
+        footer {
+            width: 100%;
+            height: 100px;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <!-- 这些语义化标签没有什么新奇的效果，他只是为了让代码更易读一些 -->
+    <header>这里是头部</header>
+    <nav>这里是导航</nav>
+    <main>
+        <span>
+            这里是主体内容
+        </span>
+        <article>这里是文章（即内容显示部分）</article>
+        <aside>这里是侧边栏</aside>
+    </main>
+    <footer>这里是底部</footer>
+</body>
+    <script>
+        // 当打开的浏览器不支持语义化标签，但又想用语义化标签的时候
+        // 第一种方法：手动创建
+        // 但是手动创建的标签类型都是行级元素，得在CSS中display:block
+        // document.createElement("header");
+        // document.createElement("nav");
+        // document.createElement("main");
+        // document.createElement("article");
+        // document.createElement("aside");
+        // document.createElement("footer");
+
+        // 第二种方法：引入第三方插件
+        // html5shiv.min.js：专门用于兼容那些不兼容H5标签的浏览器
+    </script>
+</html>

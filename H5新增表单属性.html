@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 表单新属性 -->
+    <form action="">
+        用户名：<input type="text"><br>
+        密码：<input type="password"><br>
+        <!-- email属性自带邮箱验证 -->
+        邮箱：<input type="email"><br>
+        <!-- tel属性作用于全球的电话验证，所以对于中国验证无额外验证效果
+        主要目的是为了能够在移动端直接打开数字键盘，此时意味着数字键盘限制了用户只能输入数字
+         -->
+        电话：<input type="tel"><br>
+        <!-- 验证方式只能输入合法的网址：必须包含http:// -->
+        网址：<input type="url"><br>
+        <!-- 只能输入数字（包含小数点）不能输入其他字符
+        max:最大值
+        min:最小值
+        value：默认值 -->
+        数量：<input type="number" value="60" max="100" min="0"><br>
+        <!-- search:可以提供更人性化的输入体验 -->
+        请输入商品名称：<input type="search"><br>
+        <!-- range:
+        max:最大值
+        min:最小值
+        value：默认值 -->
+        范围：<input type="range" value="60" max="100" min="0"><br>
+        <!-- color:拾色器 -->
+        颜色：<input type="color"><br>
+        <!-- 时间和日期相关
+        time:时分秒
+        date:年月日
+        datetime：年月日时分秒（不过大多数浏览器不支持，只有safari支持）
+        datetime-local:替代datetime -->
+        时间：<input type="time"><br>
+        日期：<input type="date"><br>
+        日期时间：<input type="datetime"><br>
+        日期时间：<input type="datetime-local"><br>
+        月份：<input type="month"><br>
+        星期：<input type="week">
+        <!-- 提交按钮 -->
+        <input type="submit">
+    </form>
+</body>
+</html>

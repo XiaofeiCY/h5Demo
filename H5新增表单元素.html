@@ -15,7 +15,7 @@
             <option value="2">前端</option>
             <option value="3">后端</option>
             <option value="4">移动端</option>
-        </select>
+        </select><br>
         <!-- 下拉选择输入框 -->
         <!-- 建立输入框与datalist列表联系 -->
         专业：<input type="text" list="subjects">
@@ -27,7 +27,7 @@
             <option value="后端" label="就那样"></option>
             <option value="移动端" label="还行"></option>
             <option value="js" label="不知道"></option>
-        </datalist>
+        </datalist><br>
         网址：<input type="url" list="urls">
         <!-- 如果input的输入框的type类型是url，那么option的value值必须添加http://
         也就是说网址必须规范且合法 -->
@@ -36,7 +36,13 @@
             <option value="http://www.xinlang.com"></option>
             <option value="http://www.wangyi.com"></option>
             <option value="http://www.souhu.com"></option>
-        </datalist>
+        </datalist><br>
+        <!-- 浏览器支持性极差，仅作了解 -->
+        加密：<keygen></keygen><br>
+        <!-- 显示输出信息（只能显示不能修改）
+        1、语义性更强
+        2、值需要手动设置，不能自动计算 -->
+        总金额：<output>￥100.00</output>
     </form>
 </body>
 </html>

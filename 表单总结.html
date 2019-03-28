@@ -15,7 +15,38 @@
             <input type="text" name="username" id="userName" placeholder="请输入用户名">
             <label for="userphone">手机号码：</label>
             <input type="tel" name="userphone" id="userPhone" placeholder="请输入电话号码" pattern="/^1\d{10}$/">
+            <label for="email">邮箱地址：</label>
+            <input type="email" required name="email" id="email">
+            <label for="collage">所属学院：</label>
+            <input type="text" name="collage" id="collage" list="cList" placeholder="请选择院系">
+            <datalist id="cList">
+                <option value="前端开发"></option>
+                <option value="Java"></option>
+                <option value="C++"></option>
+            </datalist>
+            <label for="score">入学成绩</label>
+            <input type="number" max="100" min="0" value="0" name="score" id="score">
+            <label for="">基础水平</label>
+            <meter id="level" max="100" min="0" low="59" high="90"></meter>
+            <label for="inTime">入学日期</label>
+            <input type="date" name="inTime" id="inTime">
+            <label for="leaveTime">毕业日期</label>
+            <input type="date" id="leaveTime" name="leaveTime">
+            <input type="submit" name="" id="">
         </fieldset>
     </form>
 </body>
+<script>
+    document.getElementById("score").oninput = function() {
+        document.getElementById("level").value = this.value
+    }
+    // document.getElementById("userPhone").oninvalid = function() {
+    //     // setCustomValidity:设置默认提示信息
+    //     this.setCustomValidity('请输入合法的11位手机号');
+    // }
+    // document.getElementById("email").oninvalid = function() {
+    //     // setCustomValidity:设置默认提示信息
+    //     this.setCustomValidity('请输入合法邮箱地址');
+    // }
+</script>
 </html>

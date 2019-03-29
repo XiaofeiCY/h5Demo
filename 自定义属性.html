@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 定义：
+    规范：
+        1、自定义属性一定要以“data-”开头
+        2、“data-”后面必须至少有一个字符，多个单词用“-”连接
+    建议：
+        1、名称应该都使用小写，不能包含任何大写字符（原因看下面案例）
+        2、名称中不要包含任何特殊字符
+        3、名称不要纯数字 -->
+    <p data-school-name="aaa">这里是自定义属性</p>
+    <p data-name="bbb">自定义属性</p>
+</body>
+    <!-- 取值 -->
+    <script>
+        window.onload = function() {
+            var p = document.querySelector("p");
+            // dataset：获取自定义属性值--数组
+            // 将data-后面的单词使用驼峰命名法连接：必须使用驼峰命名合法获取值，否则可能会获取不到
+            var value = p.dataset['schoolName']; // data-school-name
+            // var value = p.dataset['schoolname']; // data-schoolname
+            console.log(value);
+        }
+    </script>
+</html>

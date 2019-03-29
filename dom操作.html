@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>前端</li>
+        <li class="red">后端</li>
+        <li class="green">js</li>
+        <li id="h">h5</li>
+    </ul>
+</body>
+<script>
+    // 获取第一个li标签
+    window.onload = function() {
+        // 方法一：
+        // getElementsByTagName获取的是数组
+        // 通过索引来获取第一个li标签不直观，之后的数据都是靠后端获取的，前端动态生成添加
+        // 所以在不清楚数据可能会发生的变化的时候，索引不保险
+        // var cli = document.getElementsByTagName('li')[1];
+
+        // 方法二：
+        // query：查询 Selector：选择器 querySelector(“选择器名称”)
+        // querySelector：获取的是单个元素，如果获取的元素不止一个，那么只会返回满足条件的第一个元素
+        // 参数要求：如果是类选择器，必须添加“.”；如果是id选择器，必须添加“#” 否则会当成标签处理
+        // var javaLi = document.querySelector('.green');
+        // var javaLi = document.querySelector('#h');
+
+        // querySelectorAll获取满足条件的所有元素--返回的是数组
+        // var allLi = document.querySelectorAll('li')[0];
+    }
+</script>
+</html>

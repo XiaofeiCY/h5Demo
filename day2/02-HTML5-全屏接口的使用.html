@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        
+        <img src="./testimg.jpg" alt="">
+        <input type="button" id="full" value="全屏">
+        <input type="button" id="cancelFull" value="退出全屏">
+        <input type="button" id="isFull" value="是否全屏">
+    </div>
+</body>
+<script>
+    // 全屏操作的主要方法和属性
+    //     1、requestFullScreen()：开启全屏显示
+    //     注意：不同的浏览器需要添加不同的前缀
+    //     Chrome：webkit  Firefox：moz  IE：ms  opera：o
+    //     2、cancelFullScreen()：退出全屏显示
+    //     也需要因不同的浏览器而添加不同的前缀，退出全屏只能使用文档document调用
+    //     3、fullScreenElement：是否全屏状态,也只能使用文档document调用
+
+    window.onload = function() {
+        var div = document.querySelector("div");
+        // 添加三个按钮的点击事件
+        // 全屏操作
+        document.querySelector("#full").onclick = function() {
+            // 使用能力测试添加不同浏览器下的前缀
+            if (div.requestFullScreen) {
+                div.requestFullScreen();
+            } else if (div.webkitRequestFullScreen) {
+                div.webkitRequestFullScreen();
+            } else if (div.mozRequestFullScreen) {
+                div.mozRequestFullScreen();
+            } else if (div.msRequestFullScreen) {
+                div.msRequestFullScreen();
+            }
+        }
+
+        // 退出全屏
+        document.querySelector("#cancelFull").onclick = function() {
+            // 使用能力测试添加不同浏览器下的前缀
+            if (document.requestFullScreen) {
+                document.requestFullScreen();
+            } else if (document.webkitRequestFullScreen) {
+                document.webkitRequestFullScreen();
+            } else if (document.mozRequestFullScreen) {
+                document.mozRequestFullScreen();
+            } else if (document.msRequestFullScreen) {
+                document.msRequestFullScreen();
+            }
+        }
+        
+        // 判断是否是全屏状态
+        document.querySelector("#isFull").onclick = function() {
+            // 注意：1、使用document判断  2、能力测试 3、只有火狐是标准的驼峰命名，firefox是最标准的符合h5标准的浏览器
+            if (document.fullscreenElement || document.webkitFullscreenElement 
+            || document.mozFullScreenElement || document.msFullscreenElement) {
+                alert(true);
+            } else {
+                alert(false);
+            }
+            
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="div1" id="div1">
+        <!-- 在h5中，如果想拖拽元素，必须为元素添加draggable="true".图片和超链接默认可以拖拽 -->
+        <p id="pe" draggable="true">这是一个P元素，拖拖看鸭</p>
+        <p id="pe2" draggable="true">这是另一个P元素，拖拖看鸭</p>
+    </div>
+    <div class="div2" id="div2"></div>
+    <div class="div3" id="div3"></div>
+</body>
+<script>
+    // 学习拖拽，主要就是学习拖拽事件
+    // var obj = null; // 当前被拖拽的元素
+    // 应用于被拖拽元素的事件
+    // ondrag        应用于拖拽元素，整个拖拽过程都会调用--持续状态
+    // ondragstart   应用于拖拽元素，当拖拽开始时调用
+    // ondragleave   应用于拖拽元素，当鼠标离开拖拽元素时调用
+    // ondragend     应用于拖拽元素，当拖拽结束时调用
+    document.ondragstart = function (e) {
+        // 通过事件捕获来获取当前被拖拽的子元素
+        console.log(e.target);
+        e.target.style.opacity = 0.5;
+        e.target.parentNode.style.borderWidth = "5px";
+        // 利用全局变量来存储当前操作元素，效果固然可以，但是不到万不得已不要用全局变量，因为不安全
+        // obj = e.target;
+
+        // 通过dataTransfer来实现数据的存储与获取，通过这个方法，取值是在ondrop里面才可以获取到
+        // setData(format, data):
+        // format: 数据类型--1、text/html  2、text/url-list
+        // data：数据--一般来说都是字符串值
+        e.dataTransfer.setData('text/html', e.target.id);
+    }
+    document.ondragend = function (e) {
+        console.log('ondragend');
+        e.target.style.opacity = 1;
+        e.target.parentNode.style.borderWidth = "1px";
+    }
+    document.ondragleave = function () {
+        console.log('拖拽元素：ondragleave');
+    }
+    document.ondrag = function () {
+        // console.log('ondrag');
+    }
+
+    // 应用于目标元素事件
+    // ondragenter   应用于目标元素，当拖拽元素进入时调用
+    // ondragover    应用于目标元素，当停留在目标元素上时调用
+    // ondrop        应用于目标元素，当在目标元素上松开鼠标时调用
+    // ondragleave   应用于目标元素，当鼠标离开目标元素时调用
+
+    document.ondragenter = function (e) {
+        console.log('ondragenter');
+    }
+    document.ondragover = function (e) {
+        // console.log('ondragover');
+        // 如果想要触发ondrop事件，那么就必须在这个位置阻止浏览器的默认行为
+        e.preventDefault();
+    }
+    // 浏览器默认会阻止ondrop事件：我们必须在ondragover中阻止浏览器的默认行为
+    document.ondrop = function (e) {
+        var id = e.dataTransfer.getData('text/html');
+        // console.log('ondrop');
+        // 添加被拖拽的元素到当前目标元素
+        e.target.appendChild(document.getElementById(id));
+    }
+    document.ondragleave = function (e) {
+        console.log('目标元素：ondragleave');
+    }
+</script>
+<style>
+    div {
+        width: 250px;
+        height: 250px;
+        border: 1px solid #000000;
+        margin-right: 15px;
+        float: left;
+    }
+    p {
+        background-color: turquoise;
+        margin-bottom: 15px;
+    }
+</style>
+</html>

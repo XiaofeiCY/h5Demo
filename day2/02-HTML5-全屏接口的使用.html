@@ -44,14 +44,14 @@
         // 退出全屏
         document.querySelector("#cancelFull").onclick = function() {
             // 使用能力测试添加不同浏览器下的前缀
-            if (document.requestFullScreen) {
-                document.requestFullScreen();
-            } else if (document.webkitRequestFullScreen) {
-                document.webkitRequestFullScreen();
-            } else if (document.mozRequestFullScreen) {
-                document.mozRequestFullScreen();
-            } else if (document.msRequestFullScreen) {
-                document.msRequestFullScreen();
+            if (document.cancelFullScreen) {
+                document.cancelFullScreen();
+            } else if (document.webkitCancelFullScreen) {
+                document.webkitCancelFullScreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.msCancelFullScreen) {
+                document.msCancelFullScreen();
             }
         }
         
@@ -68,4 +68,10 @@
         }
     }
 </script>
+<style>
+    img {
+        width: 300px;
+        height: 300px;
+    }
+</style>
 </html>

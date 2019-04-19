@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .de {
+            width: 250px;
+            height: 250px;
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="de" id="demo"></div>
+</body>
+<script>
+    var x = document.getElementById('demo');
+    function getLocation() {
+        // 能力测试
+        if (navigator.geolocation) {
+            // navigator.geolocation.getCurrentPosition(success, error, object);
+            // success: 获取地理信息成功之后的回调
+            // error：获取地理信息失败之后的回调
+            // Object：调整获取当前获取地理信息的方式
+                // object内置参数：
+                // 1、enableHighAccuracy--true/false：是否使用高精度
+                // 2、timeout：设置超时时间，单位ms
+                // 3、maximumAge：可以设置浏览器重新获取地理信息的时间间隔，单位是ms
+            navigator.geolocation.getCurrentPosition(showPosition, showError, {
+                // enableHighAccuracy: true,
+                // timeout: 3000
+            });
+        } else {
+            x.innerHTML = 'geolocation is not supported by this browser';
+        }
+    }
+    // 成功获取定位之后的回调
+    // 如果获取地理信息成功，会将获取到的地理信息传递给成功之后的回调
+    // position.coords.latitude  纬度
+    // position.coords.longitude 经度
+    // position.coords.accuracy  精度
+    // position.coords.altitude  海拔高度
+    function showPosition(position) {
+        x.innerHTML = "Latitude:" + position.coords.latitude + "<br />Longitude："
+                        + position.coords.longitude;
+    }
+    // 定位失败后的回调
+    function showError(error) {
+        switch(error.code) {
+            case error.PERMISSION_DENIED:
+                x.innerHTML = 'User denied the request for Geolocation.'
+                break;
+            case error.POSITION_UNAVAILABLE:
+                x.innerHTML = 'Location infomation is unavailable.'
+                break;
+            case error.TIMEOUT:
+                x.innerHTML = 'The request to get user location timed out.'
+                break;
+            case error.UNKNOWN_ERROR:
+                x.innerHTML = 'AN FUCK UNKNOWN ERROR OCCURED!'            
+                break;
+        }
+    }
+    getLocation();
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- manifest='应用程序缓存清单的路径（建议文件的扩展名是appcache），这个文件的本质就是一个文本文件' -->
+<html lang="en" manifest="demo.appcache">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            width: 250px;
+            height: 200px;
+            margin-bottom: 10px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 记住测试的时候，最好用Chrome浏览器，他可以模拟断网的状态（F12->Network->Offline） -->
+    <img src="./demo1.jpg" alt="">
+    <img src="./demo2.jpg" alt="">
+    <img src="./demo3.jpg" alt="">
+    <img src="./demo4.jpg" alt="">
+</body>
+</html>

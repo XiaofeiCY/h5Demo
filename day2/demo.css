@@ -20,7 +20,7 @@
      height: 360px;
      margin: 0px auto;
      background: url('./loading.gif') center no-repeat;
-     background-size: cover;
+     background-size: 25%;
      position: relative;
  }
  video {

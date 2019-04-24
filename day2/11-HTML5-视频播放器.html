@@ -34,6 +34,8 @@
         // 1、获取播放器
         // jQuery对象是一个数组结构，需要通过数组下标索引找到对应的div元素进而对dom对象进行操作
         var video = $("video")[0];
+
+        // 2、实现播放操作
         $(".switch").click(function() {
             // 实现播放与暂停的切换：如果是暂停>>播放  如果是播放>>暂停
             if (video.paused) {
@@ -45,7 +47,7 @@
             $(this).toggleClass("fa-play fa-pause");
         });
         
-        // 实现全屏操作
+        // 3、实现全屏操作
         $(".expand").click(function() {
             // 注意：不同浏览器需要添加不同的前缀>>能力测试
             if (video.requestFullScreen) {
@@ -57,7 +59,63 @@
             } else if (video.msRequestFullScreen) {
                 video.msRequestFullScreen();
             }
-        })
+        });
+
+        // 4、实现播放业务逻辑：当视频文件可以播放的时候触发下面的事件
+        video.oncanplay = function() {
+            setTimeout(function () {
+                // 4.1、将视频文件设置为显示
+                video.style.display = 'block';
+                // 4.2、获取当前视频文件的总时长（以秒作为单位，同时获取了小数值），计算出时分秒
+                var total = video.duration;
+                // 4.3、计算时分秒
+                var result = getResult(total);
+                $(".totalTime").html(result);
+            }, 2000);
+        }
+
+        // 通过总时长计算出时分秒
+        function getResult(time) {
+            var hour = Math.floor(time / 3600);
+            hour = hour < 10 ? '0'+ hour : hour; // 补0操作
+            var minute = Math.floor(time % 3600 / 60);
+            minute = minute < 10 ? '0' + minute : minute;
+            var second = Math.floor(time % 60);
+            second = second < 10 ? '0' + second : second;
+            // 返回结果
+            return hour + ":" + minute + ":" + second;
+        }
+
+        // 5、实现播放过程中的业务逻辑，当视频播放的时候会触发ontimeupdate事件
+        video.ontimeupdate = function() {
+            // 5.1、获取当前的播放时间
+            var current = video.currentTime;
+            // 5.2、计算时分秒
+            var result = getResult(current);
+            // 5.3、将结果展示在指定的dom元素中
+            $(".currentTime").html(result);
+            // 5.4、设置进度条
+            var percent = current / video.duration * 100 + "%";
+            $(".elapse").css('width', percent);
+        }
+
+        // 6、实现视频的跳播
+        $(".bar").click(function(e) {
+            // 1、获取当前鼠标相对于父元素的left值--偏移值
+            var offset = e.offsetX;
+            // 2、计算偏移值相对总父元素总宽度的比例
+            var percent = offset / $(this).width();
+            // 3、计算这个位置对应的视频进度值
+            var current = percent * video.duration;
+            // 4、设置当前视频的currentTime
+            video.currentTime = current;
+        });
+
+        // 7、播放完毕之后，重置播放器的状态
+        video.onended = function() {
+            video.currentTime = 0;
+            $(".switch").removeClass('fa-pause').addClass("fa-play");
+        }
     });
 </script>
 </html>

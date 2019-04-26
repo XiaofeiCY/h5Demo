@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .first {
+            color: red;
+        }
+        /* 兄弟伪类：
+        +：获取当前元素的相邻的满足条件的元素
+        ~：获取当前元素的满足条件的兄弟元素 
+        注意：它只会往后找  不会往前找 */
+
+        /* 下面这句话的样式说明：查找添加了.first样式的标签的相邻的li元素
+        1、相邻
+        2、必须是指定类型的元素 */
+        .first + li {
+            color: blue;
+        }
+
+        /* 样式说明：查找添加了.first样式的元素的所有兄弟的li元素
+        1、必须是指定类型的元素 */
+
+        .first ~ li {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+     <ul>
+         <li>测试</li>
+         <li class="first">第三句</li>
+         <li>第一句</li>
+         <li>第二句</li>
+         <li>第四句</li>
+         <li>第五句</li>
+     </ul>
+</body>
+</html>

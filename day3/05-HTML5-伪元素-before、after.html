@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        body {
+            padding: 300px 200px;
+        }
+        div:nth-of-type(1) {
+            width: 300px;
+            height: 200px;
+            float: left;
+            background-color: red;
+            position: relative;
+        }
+        div:nth-of-type(2) {
+            width: 100px;
+            height: 200px;
+            float: left;
+            background-color: blue;
+        }
+        div:nth-of-type(1)::before {
+            /* 可以就把before、after当成是div的一对隐形的翅膀
+            不管你用不用，他都存在 */
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-color: #ffffff;
+            border-radius: 90px;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+        }
+        div:nth-of-type(1)::after {
+            /* 注意：
+                1、必须添加content属性，否则后期在页面上看不到
+                2、默认是行级元素，如果想设置宽高，就必须转换为块级元素
+                3、由于是虚拟元素，在页面上没有实际的元素存在，所以JS无法获取该dom元素 */
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-color: #ffffff;
+            border-radius: 90px;
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+</body>
+</html>

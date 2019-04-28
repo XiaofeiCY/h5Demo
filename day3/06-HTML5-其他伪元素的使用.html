@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p::first-letter {
+            /* 如果文本是英文，第一个letter就是该段落的第一个字母；
+            如果是中文，第一个letter就是该段落的第一个汉字 */
+            font-size: 30px;
+            color: aqua;
+            /* 首字下沉 */
+            float: left;
+        }
+        /* 如果设置了first-letter，那么first-line就获取不到第一个字或字母，
+        selection也无法选中（存在优先级的关系） */
+        p::first-line {
+            text-decoration: underline;
+        }
+        p::selection {
+            /* selection设置当前被选中内容的样式
+            只能改变其显示样式，但不能改变他的显示内容 */
+            background-color: yellow;
+            color: red;
+            font-size: 30px; /* 这个就不起作用 */
+        }
+    </style>
+</head>
+<body>
+    <p>
+        眉宇之间透露出一股强烈的飒爽，让人十分着迷<br>
+        希望你可以看到我的心意
+    </p>
+</body>
+</html>

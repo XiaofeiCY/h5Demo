@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .demo {
+            width: 600px;
+            padding: 30px;
+            background-color: #666;
+            margin: 20px auto;
+            text-align: center;
+            font: bold 80px/100% "微软雅黑";
+            color: #fff;
+        }
+        /* 添加阴影 text-shadow:offsetX（X轴偏移量） offsetY（Y轴偏移量） blur（羽化/模糊程度） color（颜色）*/
+        .demo1 {
+            text-shadow: -2px -2px 5px red;
+        }
+        .demo2 {
+            text-shadow: 0px 0px 30px #fff;
+        }
+        /* 多层阴影叠加效果 */
+        .demo3 {
+            text-shadow: 0px 0px 10px #fff, 0px 0px 30px #fa3030, 0px 0px 50px #fff;
+        }
+        .demo4 {
+            color: #000;
+            text-shadow: 0px 1px 0px #fff;
+        }
+        /* 浮雕立体效果 */
+        .demo5 {
+            text-shadow: -1px -1px 0px #eee, -2px -2px 0px #ddd, -3px -3px 0px #ccc;
+        }
+        .demo6 {
+            /* transparent也是设置透明度，只是他是完全透明，不可以调节透明度的 */
+            color: transparent;
+            text-shadow: 0px 0px 5px #8d2020;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo demo1">中华人民共和国</div>
+    <div class="demo demo2">中华人民共和国</div>
+    <div class="demo demo3">中华人民共和国</div>
+    <div class="demo demo4">中华人民共和国</div>
+    <div class="demo demo5">中华人民共和国</div>
+    <div class="demo demo6">中华人民共和国</div>
+    <div class="demo">中华人民共和国</div>
+    <div class="demo">中华人民共和国</div>
+    <div class="demo">中华人民共和国</div>
+    <div class="demo">中华人民共和国</div>
+</body>
+</html>

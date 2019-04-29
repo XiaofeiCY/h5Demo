@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body {
+            background-color: #ccc;
+        }
+        .content {
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgb(109, 32, 32);
+            box-sizing: border-box;
+            margin: 50px auto;
+        }
+        .an_head {
+            width: 250px;
+            height: 125px;
+            background-color: darkgreen;
+            border-radius: 125px 125px 0px 0px;
+            position: relative;
+            margin: 10px auto;
+        }
+        .an_head::before,
+        .an_head::after {
+            content: "";
+            width: 20px;
+            height: 20px;
+            border-radius: 20px;
+            position: absolute;
+            bottom: 10px;
+            background-color: #fff;
+        }
+        .an_head::before {
+            left: 70px;
+        }
+        .an_head::after {
+            right: 70px;
+        }
+        .an_body {
+            width: 250px;
+            height: 250px;
+            background-color: darkgreen;
+            border-radius: 0px 0px 20px 20px;
+            margin: 0px auto;
+            position: relative;
+        }
+        .an_body::before, .an_body::after {
+            content: "";
+            width: 30px;
+            height: 180px;
+            position: absolute;
+            top: 20px;
+            border-radius: 10px;
+            background-color: darkgreen;
+        }
+        .an_body::before {
+            left: -40px;
+        }
+        .an_body::after {
+            right: -40px;
+        }
+        .an_foot {
+            width: 250px;
+            height: 100px;
+            margin: 0px auto;
+            position: relative;
+        }
+        .an_foot::before,
+        .an_foot::after {
+            content: "";
+            width: 30px;
+            height: 90px;
+            background-color: darkgreen;
+            border-radius: 0px 0px 10px 10px;
+            position: absolute;
+            top: 0px;
+        }
+        .an_foot::before {
+            left: 50px;
+        }
+        .an_foot::after {
+            right: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="an_head"></div>
+        <div class="an_body"></div>
+        <div class="an_foot"></div>
+    </div>
+</body>
+</html>

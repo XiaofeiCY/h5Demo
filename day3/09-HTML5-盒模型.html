@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .demo {
+            width: 300px;
+            margin: 200px 200px;
+            overflow: auto;
+        }
+        .left {
+            /* 默认情况下，width仅仅是内容的宽度 */
+            width: 150px;
+            height: 100px;
+            float: left;
+            border: 4px solid;
+            background-color: yellow;
+            /* 设置盒模型： 
+            border-box:设置的宽度是总宽度（内边距+边框+内容宽度）
+            content-box:设置的宽度是内容宽度*/
+            box-sizing: border-box;
+        }
+        .right {
+            width: 150px;
+            height: 100px;
+            float: left;
+            background-color: violet;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

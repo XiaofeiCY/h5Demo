@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 550px;
+            height: 550px;
+            border: 1px solid red;
+            /* overflow: auto; */
+            background: url('./true.jfif');
+            /* 1、设置背景平铺 */
+            /* h5新增：
+                round：会将图片进行缩放再平铺
+                space：图片不会缩放平铺，只会在图片之间产生相同的间距值 */
+            /* background-repeat: space; */
+            /* 2、设置在滚动容器的背景的行为：跟随滚动/固定
+            fixed：背景图片的位置固定不变
+            scroll：当滚动容器的时候背景图片也会跟随滚动 */
+
+            /* local和scroll区别：前提是滚动当前容器内容
+            scroll：背景图片不会跟随内容一起滚动
+            local：背景图片会跟随内容一起滚动 */
+            /* background-attachment: local; */
+
+            /* 背景尺寸：
+            设置百分比是参照父元素大小设置的百分比
+            contain：按比例调整图片大小，自适应整个元素的背景区域，使图片全部包含在容器内
+            cover：与contain相反，背景会按照容器大小完全覆盖整个容器，所以会导致图片溢出 */ 
+            background-size: cover;
+            /* 设置position：控制图片显示位置 */
+            background-position: center;
+        }
+        p {
+            width: 200px;
+            height: 800px;
+        }
+        span {
+            display: block;
+            width: 200px;
+            height: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span></span>
+    </div>
+    <p></p>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        div {
+            width: 253px;
+            height: 380px;
+            margin: 100px auto;
+            border: 30px solid red;
+            /* 添加边框图片:
+            border-image-source：可以指定边框图片的路径，默认只是填充到容器的四个角点 */
+            /* border-image-source: url('./true3.jfif'); */
+            /* 使其成为九宫格：
+            border-image-slice:设置四个方向上的裁切距离，fill：做内容的内部填充 */
+            /* border-image-slice: 30 fill; */
+            /* border-image-width: 边框宽度，如果就没有设置这个属性，
+            那么宽度默认就是元素的原始边框宽度
+            注意：1、边框图片的本质是背景，并不会影响元素内容的放置
+                 2、内容的放置只会被容器的border和padding影响
+                 建议：一般不使用这个属性，而是直接调整border值。 */
+            /* border-image-outset: 扩展边缘 （注意：最好不要用，因为很可能会影响到整个页面的布局） */
+            /* border-image-repeat:
+            repeat：直接平铺，可能出现的结果就是不均匀
+            round：将内容进行缩放，调整间距，自适应再平铺 */
+
+            /* 缩写： */
+            /* border-image: source slice / width / outset repeat; */
+            border-image: url("./true3.jfif") 30 fill / 30px / 0px round;
+        }
+    </style>
+</head>
+<body>
+    <div>2</div>
+</body>
+</html>

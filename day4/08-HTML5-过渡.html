@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            top: 0px;
+            left: 100px;
+            background-color: red;
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            /* 添加过渡效果：过渡效果完成后，默认会还原到原始状态
+            transition-property: 添加过渡效果的样式属性名称
+            transition-duration: 过渡效果的耗时 以秒作单位
+            transition-timing-function:设置时间函数 -- 控制运动速度
+            transition-delay: 过渡效果延迟
+            简写：
+            transition：属性名称 过渡时间 时间函数 延迟 */
+            /* transition: left 2s linear 0s; */
+
+            /* 为多个样式同时添加过渡效果 */
+            transition: left 2s, background-color 2s;
+
+            /* 为所有样式添加过渡效果
+                注意：
+                1、不能独立设置过渡效果
+                2、效率低下，它会去查询所有添加样式
+                3、steps(n)：一个让过渡效果分为指定的n次来完成
+                建议不要用这个方式  影响页面渲染速度 */
+            /* transition: all 2s steps(4); */
+            
+            /* 兼容性
+            IE10以上才支持这个CSS样式
+            -moz-transition: all 2s steps(4);
+            -webkit-transition: all 2s steps(4);
+            -o-transition: all 2s steps(4); */
+            
+        }
+        /* 单击（鼠标按下去的时候） */
+        div:active {
+            background-color: blue;
+            left: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

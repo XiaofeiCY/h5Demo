@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .content {
+            margin: 200px auto;
+            width: 200px;
+            overflow: auto;
+        }
+        ul, h3 {
+            margin: 0px;
+        }
+        ul {
+            background-color: yellow;
+            overflow: hidden;
+            height: 0px;
+            /* 因为transition只对具体的值起作用（宽高、颜色等等，所以这里通过改变display不起作用） */
+            transition: height 1s;
+        }
+        h3 {
+            background-color: aqua;
+            color: brown;
+            cursor: pointer;
+        }
+        .item:hover > ul {
+            height: 110px;
+        }
+        li {
+            list-style: none;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="item">
+            <h3>这是大标题</h3>
+            <ul>
+                <li>这是小标题</li>
+                <li>这是小标题</li>
+                <li>这是小标题</li>
+                <li>这是小标题</li>
+                <li>这是小标题</li>
+            </ul>
+        </div>
+        <div class="item">
+            <h3>这是大标题</h3>
+            <ul>
+                <li>这是小标题</li>
+                <li>这是小标题</li>
+                <li>这是小标题</li>
+                <li>这是小标题</li>
+                <li>这是小标题</li>
+            </ul>
+        </div>
+        <div class="item">
+            <h3>这是大标题</h3>
+            <ul>
+                <li>这是小标题</li>
+                <li>这是小标题</li>
+                <li>这是小标题</li>
+                <li>这是小标题</li>
+                <li>这是小标题</li>
+            </ul>
+        </div>
+        <div class="item">
+            <h3>这是大标题</h3>
+            <ul>
+                <li>这是小标题</li>
+                <li>这是小标题</li>
+                <li>这是小标题</li>
+                <li>这是小标题</li>
+                <li>这是小标题</li>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>

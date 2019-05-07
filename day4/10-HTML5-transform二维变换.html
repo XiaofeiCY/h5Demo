@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(47, 92, 134); 
+            transition: transform 1s;
+            margin: 50px auto;
+        }
+        /* 移动：translate */
+        .item:active {
+            /* 使用transform实现元素的移动
+                a、移动是参照元素的左上角
+                b、执行完毕之后会恢复到原始状态
+                translate(x, y)如果只有一个值那就代表X方向
+                transform: translate(100px)
+                transform: translate(100px, 200px) */
+                /* 添加水平或者垂直方向的移动
+                transform: translateX()
+                transform: translateY() */
+                transform: translateX(300px);
+        }
+        /* 缩放：scale */
+        .item:hover {
+            /* 实现缩放 1：不缩放 >1：放大  <1：缩小 参照原点是几何元素的中心
+            1、如果只有一个参数，就代表X轴和Y轴都进行等比例的缩放
+            2、两个值就代表X、Y各自方向 */
+            /* transform: scale(2); */
+            /* transform: scale(2, 1); */
+            /* 指定缩放方向： */
+            transform: scaleX(0.5);
+        }
+        /* 旋转：rotate */
+        .demo {
+            /* 设置旋转轴心(影响旋转和斜切)
+            1、X、Y
+            2、关键字：left、top、right、bottom、center */
+            transform-origin: left top;
+        }
+        .demo:active {
+            /* 正值顺时针、负值逆时针 默认只能围绕几何中心原点旋转 */
+            /* transform: rotate(90deg); */
+            transform: rotate(-90deg);
+        }
+        /* 斜切：skew */
+        .demo:hover {
+            /* 如果角度为正值，则往当前轴的负方向斜切，如果角度为负值，则往当前轴的正方向斜切 */
+            /* transform: skew(-30deg); */
+            transform: skew(30deg, -30deg);
+            /* 设置某个方向上的斜切值
+            transform: skewX(30deg);
+            transform: skewY(30deg); */
+        }
+    </style>
+</head>
+<body>
+    <div class="item"></div>
+    <div class="demo"></div>
+</body>
+</html>

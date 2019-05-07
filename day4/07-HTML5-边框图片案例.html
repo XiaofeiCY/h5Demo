@@ -7,24 +7,33 @@
     <title>Document</title>
     <style>
         div {
-            width: 300px;
-            height: auto;
-            border: 10px solid red;
+            overflow: auto;
+            max-width: 200px;
+            border: 30px solid red;
             margin: 100px auto;
+            border-top: 5px solid;
+            border-left: 5px solid;
+            border-right: 5px solid;
             /* 添加边框图片 */
-            border-image-source: url('./true4.jfif');
+            border-image-source: url('./true4.png');
             /* 设置手保护的区域大小： */
-            border-image-slice: 10;
+            border-image-slice: 154 fill;
             /* 设置边框图片的宽度
             1、明确边框图片的大小
             2、明确受保护的区域的大小 */
-            border-image-width: 10px;
+            border-image-width: 30px;
             /* 设置背景平铺效果，默认是stretch——拉伸 */
             border-image-repeat: stretch;
         }
     </style>
 </head>
 <body>
-    <div>假装这里有长长的一段话</div>
+    <div>
+        假装这一段长的一段话假装这里有长长的一段话假装这里有长长的一段话假装这里有长长的一段话
+        假装这一段长的一段话假装这里有长长的一段话假装这里有长长的一段话假装这里有长长的一段话
+        假装这一段长的一段话假装这里有长长的一段话假装这里有长长的一段话假装这里有长长的一段话
+        假装这一段长的一段话假装这里有长长的一段话假装这里有长长的一段话假装这里有长长的一段话
+        假装这一段长的一段话假装这里有长长的一段话假装这里有长长的一段话假装这里有长长的一段话
+    </div>
 </body>
 </html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            /* 添加动画效果（必要：1、动画名 2、耗时）*/
+            /* 1、animation-name：指定动画名称 */
+            animation-name: demo;
+            /* 2、animation-duration：动画总耗时 */
+            animation-duration: 2s;
+            /* 3、动画播放次数（默认是1次），可以是具体数值，也可以指定：infinite（无限次） */
+            animation-iteration-count: infinite;
+            /* 4、设置交替动画 alternate：来回交替 */
+            animation-direction: alternate;
+            /* 5、设置动画延迟 */
+            animation-delay: 1s;
+            /* 6、设置动画结束时的状态：默认情况下，动画执行完毕之后，会回到原始状态
+            forwards：会保留动画结束时的状态，在有延迟的情况下，并不会立刻进行到动画的初始状态
+            backwards：不会保留结束时候的状态，在有延迟的情况下，如果动画有初始状态，那么会立刻进入到初始状态
+            both：会保留动画结束时候的状态，在有延迟的情况下也会立刻进入到初始状态 
+                注意：如果设置了循环动画，则该CSS样式不会有效果*/
+            animation-fill-mode: both;
+            /* 7、设置动画的时间函数 */
+            animation-timing-function: linear;
+            /* 8、设置播放状态 paused：暂停 running：运行（通过JS可以控制动画运行的状态） */
+            animation-play-state: running;
+        }
+        /* 创建动画 */
+        @keyframes demo {
+            /* 百分比是指整个动画耗时的百分比 */
+            /* from等同于0%
+            to等同于100% */
+            /* form {
+
+            }
+            to {
+
+            } */
+            0% {
+                transform: translate(0px, 0px);
+            }
+            25% {
+                transform: translate(350px, 0px);
+            }
+            50% {
+                transform: translate(350px, 100px);
+            }
+            75% {
+                transform: translate(210px, 100px);
+            }
+            100% {
+                transform: translate(0px, 0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

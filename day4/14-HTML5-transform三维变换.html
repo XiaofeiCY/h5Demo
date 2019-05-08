@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 添加三维移动 */
+        .demo1 {
+            /* translate3d(X方向偏移, Y方向偏移, Z方向偏移); */
+            transform: translate3d(400px, 0px, 0px);
+        }
+        /* 添加三维缩放 */
+        .demo2 {
+            /* scale3d(X方向的缩放, Y方向的缩放, Z方向的缩放); */
+            transform: scale3d(1, 1, 10);
+        }
+        /* 添加三维旋转 */
+        .demo3 {
+            /* rotate3d(X, Y, Z, angle);
+            X: 代表X轴方向上的向量值
+            Y：代表Y轴方向上的向量值
+            Z：代表Z轴方向上的向量值 */
+            transform: rotate3d(1, 1, 1, 150deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="demo1"></div>
+</body>
+</html>

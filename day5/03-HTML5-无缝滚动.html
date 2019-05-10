@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .item {
+            width: 80%;
+            background-color: rgb(179, 179, 179);
+            margin: 200px auto;
+            overflow: hidden;
+        }
+        .demo {
+            width: 200%;
+            height: 300px;
+            /* overflow: hidden; */
+            animation: movePic 7s linear infinite;
+        }
+        .demo:hover {
+            cursor: pointer;
+            animation-play-state: paused;
+        }
+        img {
+            width: calc(100% / 16);
+            height: 100%;
+            display: block;
+            margin: 0;
+            float: left;
+        }
+        @keyframes movePic {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="item">
+        <div class="demo">
+            <img src="./imgs/pic1.jfif" alt="">
+            <img src="./imgs/pic2.jfif" alt="">
+            <img src="./imgs/pic3.jfif" alt="">
+            <img src="./imgs/pic4.jfif" alt="">
+            <img src="./imgs/pic5.jfif" alt="">
+            <img src="./imgs/pic6.jfif" alt="">
+            <img src="./imgs/pic7.jfif" alt="">
+            <img src="./imgs/pic8.jfif" alt="">
+            <img src="./imgs/pic1.jfif" alt="">
+            <img src="./imgs/pic2.jfif" alt="">
+            <img src="./imgs/pic3.jfif" alt="">
+            <img src="./imgs/pic4.jfif" alt="">
+            <img src="./imgs/pic5.jfif" alt="">
+            <img src="./imgs/pic6.jfif" alt="">
+            <img src="./imgs/pic7.jfif" alt="">
+            <img src="./imgs/pic8.jfif" alt="">
+        </div>
+    </div>
+</body>
+</html>

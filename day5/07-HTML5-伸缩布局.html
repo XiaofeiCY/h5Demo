@@ -37,6 +37,14 @@
             
             /* flex-flow: 是flex-wrap和flex-direction的综合 （值没有先后顺序） */
             /* flex-flow: column wrap; */
+
+            /* align-items: 设置所有子元素（伸缩项）在侧轴方向上（即垂直方向）的对齐方式
+                center：设置在侧轴方向上居中对齐
+                flex-start：设置在侧轴方向上的顶对齐
+                flex-end：设置在侧轴方向上的底对齐
+                stretch：拉伸--让子元素在侧轴方向上进行拉伸，以填充整个侧轴方向（默认值，但注意子元素伸缩项不要设置高度才会起作用）
+                baseline：英文文本基线对齐（就是英文格的第三条线） */
+            align-items: flex-end;
         }
         .tes1, .tes2, .tes3, .tes4, .tes5 {
             line-height: 200px;
@@ -67,6 +75,9 @@
 
             /* 在以后的使用中，一般直接就用flex就行，用于分配不设置宽度或高度的子元素在父元素中的内容占据 */
             /* flex: 2; */
+
+            /* 设置单个元素在侧轴方向上的对齐方式 */
+            align-self: center;
         }
         .tes2 {
             background-color: rgb(241, 37, 37);
@@ -88,6 +99,24 @@
         .tes5 {
             background-color: rgb(207, 98, 131);
         }
+        .item {
+            width: 80%;
+            height: 500px;
+            display: flex;
+            border: 1px solid #000;
+            margin: 200px auto;
+        }
+        .de1 {
+            /* flex是用来设置当前伸缩子项占据剩余空间的比例值 */
+            flex: 1;
+            height: 100%;
+            background-color: rgb(165, 216, 83);
+        }
+        .de2 {
+            flex: 4;
+            height: 100%;
+            background-color: rgb(83, 85, 216);
+        }
     </style>
 </head>
 <body>
@@ -97,6 +126,10 @@
         <div class="tes3">3</div>
         <!-- <div class="tes4">4</div>
         <div class="tes5">5</div> -->
+    </div>
+    <div class="item">
+        <div class="de1"></div>
+        <div class="de2"></div>
     </div>
 </body>
 </html>

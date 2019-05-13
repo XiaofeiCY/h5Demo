@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        div {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #ccc;
+            margin: 200px auto;
+        }
+        ul {
+            width: 100%;
+            list-style: none;
+            background-color: aqua;
+            display: flex;
+        }
+        li {
+            text-align: center;
+            border-right: 1px solid #000000;
+            flex: 1px;
+        }
+        li:last-child {
+            border: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>
+            做这个案例的本意从表面看并没有什么不一样的<br>
+            但是他实现了当不知道导航数量的时候<br>
+            又想填充整个导航的布局，使用flex可以自动平均分布填充
+        </p>
+        <ul>
+            <li>首页</li>
+            <li>购物车</li>
+            <li>个人中心</li>
+            <li>商品列表</li>
+            <li>关于我们</li>
+        </ul>
+    </div>
+</body>
+</html>

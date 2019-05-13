@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        .demo {
+            width: 80%;
+            height: 500px;
+            margin: 200px auto;
+            background-color: rgb(119, 22, 22);
+            display: flex;
+            /* 默认的主轴是row，这里需要一列的方式进行排列 */
+            flex-direction: column;
+        }
+        main {
+            flex: 1;
+            width: 100%;
+            background-color: rgb(119, 233, 115);
+            display: flex;
+        }
+        header, footer {
+            width: 100%;
+            height: 100px;
+            background-color: rgb(115, 229, 233);
+        }
+        header {
+            background-color: rgb(233, 115, 154);
+        }
+        aside {
+            flex: 1;
+            background-color: rgb(77, 66, 107);
+        }
+        article {
+            flex: 4;
+            background-color: rgb(134, 174, 211);
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <header></header>
+        <main>
+            <aside></aside>
+            <article></article>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>

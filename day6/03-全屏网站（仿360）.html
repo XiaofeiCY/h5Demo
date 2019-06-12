@@ -27,28 +27,70 @@
                 <img src="./imgs/text_07.png" alt="">
                 <img src="./imgs/text_08.png" alt="">
             </div>
-            <div class="intro"></div>
+            <div class="intro">
+                <img src="./imgs/intro.png" alt="">
+            </div>
         </div>
         <div class="section second">
-            <h3>第二屏</h3>
+            <div class="fuckSecond">
+                <div class="shield">
+                    <img src="./imgs/shield_01.png" alt="">
+                    <img src="./imgs/shield_02.png" alt="">
+                    <img src="./imgs/shield_03.png" alt="">
+                    <img src="./imgs/shield_04.png" alt="">
+                    <img src="./imgs/shield_05.png" alt="">
+                    <img src="./imgs/shield_06.png" alt="">
+                    <img src="./imgs/shield_07.png" alt="">
+                    <img src="./imgs/shield_08.png" alt="">
+                    <img src="./imgs/shield_09.png" alt="">
+                </div>
+                <div class="secInfo">
+                    <img src="./imgs/secInfo.png" alt="">
+                </div>
+            </div>
         </div>
         <div class="section third">
-            <h3>第三屏</h3>
+            <div class="thirdInfo">
+                <img src="./imgs/thirdInfo.png" alt="">
+            </div>
+            <div class="circle">
+                <img src="./imgs/thirdCircle.png" alt="">
+                <img src="./imgs/rocket.png" alt="" class="rocket">
+            </div>
         </div>
         <div class="section forth">
             <h3>第四屏</h3>
+            <!-- <div class="search">
+                <div class="searchBar">
+                    <img src="./imgs/searchBar.png" alt="">
+                </div>
+                <div class="searchText">
+                    <img src="./imgs/searchText.png" alt="">
+                </div>
+                <div class="searchReasult"></div>
+            </div>
+            <div class="forthInfo"></div> -->
+        <div class="section fifth">
+            <h3>第五屏</h3>
         </div>
     </div>
 </body>
 <script>
     $(function(){
+        setTimeout(function() {
+            $('.first').addClass("current");
+        }, 500);
         $('#360Page').fullpage({
             // 设置每一屏的背景色
-            slidesColor: ['#aa6a16', '#16aa8a', '#aa1616', '#19005e'],
+            slidesColor: ['#0da5d6', '#2ab561', '#de8910', '#16ba9d', '#0da5d6'],
             // 滚动到某一屏之后的回调
             // index: 当前屏的索引，索引从1开始
             afterLoad: function(anchorLink, index) {
-                console.log(anchorLink, index);
+                // 先将其他屏的current样式标记清除
+                $('.section').removeClass('current');
+                // 当滚动到某一屏之后，添加样式标记
+                $(".section").eq(index - 1).addClass("current");
+                console.log('aaa');
             }
         });
     });

@@ -1,0 +1,133 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.section {
+    overflow: hidden;
+}
+/* 第一屏样式 */
+.first .logo {
+    text-align: center;
+}
+.first .text {
+    height: 150px;
+    text-align: center;
+}
+.first .intro {
+    height: 120px;
+    text-align: center;
+}
+.first .intro img {
+    height: 100%;
+}
+.first .text img {
+    height: 100%;
+    margin: 0px 20px;
+    opacity: 0.2;
+    transition: margin 1s, opacity 1s;
+}
+.first.current .text img {
+    margin: 0px;
+    opacity: 1;
+}
+
+/* 第二屏样式 */
+
+.fuckSecond {
+    display: flex;
+    /* 设置主轴方向的排列方式 */
+    justify-content: space-around;
+    /* 设置侧轴方向的排列方式 */
+    align-items: center;
+}
+.second .shield {
+    /* flex: 1; */
+    width: 650px;
+    font-size: 0px;
+}
+.second .shield img {
+    display: block;
+    float: left;
+    margin: 0px;
+    transition: transform 1s;
+}
+.second .shield img:nth-of-type(1) {
+    transform: translate(100px, 100px) rotate(60deg);
+}
+.second .shield img:nth-of-type(2) {
+    transform: translate(150px, 80px) rotate(-60deg);
+}
+.second .shield img:nth-of-type(3) {
+    transform: translate(210px, 30px) rotate(90deg);
+}
+.second .shield img:nth-of-type(4) {
+    transform: translate(80px, -100px) rotate(-40deg);
+}
+.second .shield img:nth-of-type(5) {
+    transform: translate(20px, 180px) rotate(60deg);
+}
+.second .shield img:nth-of-type(6) {
+    transform: translate(180px, 250px) rotate(-250deg);
+}
+.second .shield img:nth-of-type(7) {
+    transform: translate(-170px, -110px) rotate(180deg);
+}
+.second .shield img:nth-of-type(8) {
+    transform: translate(300px, 80px) rotate(135deg);
+}
+.second .shield img:nth-of-type(9) {
+    transform: translate(-200px, 50px) rotate(175deg);
+}
+.second.current .shield > img {
+    transform: none;
+}
+.second .secInfo {
+    /* flex: 2; */
+}
+.second .secInfo img {
+}
+
+/* 第三屏样式 */
+.third {
+    padding: 0px 20px;
+}
+.thirdInfo, .circle{
+    width: 50%;
+    height: 50%;
+    float: left;
+    position: relative;
+    /* text-align: center; */
+    /* line-height: 480px; */
+}
+.thirdInfo img {
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.circle img:first-child {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+}
+.rocket {
+    position: absolute;
+    top: 500%;
+    left: -300%;
+    transition: top 1s, left, 1s;
+}
+.third.current .rocket {
+    top: 30%;
+    left: 50%;
+    height: 200px;
+    transform: translateX(-50%);
+}
+/* 第四屏幕样式 */
+/* .forth {
+    width: 100%;
+    height: 100%;
+} */

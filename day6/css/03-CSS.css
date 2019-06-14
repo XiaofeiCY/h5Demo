@@ -127,7 +127,152 @@
     transform: translateX(-50%);
 }
 /* 第四屏幕样式 */
-/* .forth {
-    width: 100%;
+.forth {
+    position: relative;
+}
+.search {
+    /* width: 50%; */
+    position: absolute;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-115%, -50%);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.searchBar {
+    width: 759px;
+    height: 96px;
+    background: url('../imgs/searchBar.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transform: translateX(-100%);
+}
+.searchText {
+    width: 0px;
+    height: 46px;
+    background: url('../imgs/searchText.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    top: 23px;
+    left: 40px;
+    position: absolute;
+}
+.searchReasult {
+    width: 742px;
+    height: 0px;
+    background: url('../imgs/searchReasult.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: -9px auto 0px;
+}
+.forthInfo {
+    width: 800px;
+    /* width: 50%; */
+    height: 410px;
+    /* padding: 0px 20px; */
+    box-sizing: border-box;
+    /* float: left; */
+    background: url('../imgs/forthInfo.png');
+    background-size: calc(100% - 20px);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(100%, -50%);
+}
+.forth.current .searchBar {
+    transform: translateX(0%);
+    transition: transform 1s;
+}
+.forth.current .searchText {
+    width: 226px;
+    transition: width 1s 1s steps(5);
+}
+.forth.current .searchReasult {
+    height: 542px;
+    transition: height 1s 2.5s;
+}
+/* 第五屏样式 */
+
+.fifth {
+    position: relative;
+}
+.fifth > div {
+    display: block !important;
+    vertical-align: unset !important;
+}
+.fifthInfo {
+    height: 15%;
+    padding-top: 20px;
+    box-sizing: border-box
+}
+.fifthInfo img {
     height: 100%;
-} */
+    display: block;
+    margin: 0 auto;
+}
+.fifthBorder {
+    width: 1075px;
+    height: 85%;
+    padding: 20px 0px;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0px auto;   
+    overflow: hidden;
+}
+.fifthBorderTop {
+    width: 100%;
+    height: 1px;
+    background: url('../imgs/fifthBorderTop.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transform: translateX(-100%);
+}
+.fifthBorderLeft {
+    width: 1px;
+    height: 100%;
+    background: url('../imgs/fifthBorderLeft.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transform: translateY(110%);
+}
+.fifthBorderBottom {
+    width: 100%;
+    height: 1px;
+    background: url('../imgs/fifthBorderBottom.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transform: translateX(100%);
+}
+.fifthBorderRight {
+    width: 1px;
+    height: calc(100% - 40px);
+    background: url('../imgs/fifthBorderRight.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transform: translateY(-110%);
+    position: absolute;
+    top: 20px;
+    /* bottom: 20px; */
+    right: 0px;
+}
+.fifth.current .fifthBorderTop, .fifth.current .fifthBorderLeft, .fifth.current .fifthBorderBottom, .fifth.current .fifthBorderRight {
+    transform: none;
+    transition: transform 1s;
+}
+.fifthBackground {
+    width: 100%;
+    height: calc(100% - 37px);
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    background: url('../imgs/fifthBackground.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+.fifth.current .fifthBackground {
+    opacity: 1;
+    transition: opacity 1s 1s;
+}
